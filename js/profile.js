@@ -38,6 +38,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             url: 'https://youtube.com/@gcuorefortnite'
           },
           {
+            platform: 'Projects',
+            icon: 'fas fa-laptop-code',
+            url: 'https://gcuore.github.io/projects'
+          },
+          {
             platform: 'GitHub',
             icon: 'fab fa-github',
             url: 'https://github.com/gcuore'
