@@ -3,9 +3,10 @@ export function renderProjectCard(project, site) {
     `https://websim.ai/c/${site.id}` :
     `https://websim.ai/p/${project.id}`;
 
+  // Use site.id for the image URL if available, otherwise use a placeholder
   const imageUrl = site ?
     `https://images.websim.ai/v1/site/${site.id}/600` :
-    'https://images.websim.ai/placeholder.png';
+    'https://images.websim.ai/placeholder.png'; // Fallback image
 
   const lastUpdated = new Date(project.updated_at).toLocaleDateString(undefined, {
     year: 'numeric',
@@ -36,13 +37,11 @@ export function renderProjectCard(project, site) {
   `;
 }
 
-export function renderErrorCard(title) {
+export function renderErrorCard(projectTitle) {
   return `
-    <div class="project-card error-card">
-      <div class="project-info">
-        <h2 class="project-title">Error loading project</h2>
-        <p>Failed to load details for ${title || 'this project'}.</p>
-      </div>
+    <div class="project-info">
+      <h2 class="project-title">Error loading project</h2>
+      <p>Failed to load details for ${projectTitle || 'this project'}.</p>
     </div>
   `;
 }
